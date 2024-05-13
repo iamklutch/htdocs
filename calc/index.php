@@ -10,20 +10,22 @@
     <!-- using PHP for the form action gets the server address quickly
     however, you should always reference another php specific page for
     your actions that should be in a private folder -->
-    <form action="<?php echo htmlspecialchars($_SERVER
-    ["PHP_SELF"]); ?>" method="post">
-        <input type="number" name="num01"
-        placeholder="Number one" required>
-        <select name="operator">
-            <option value="add">+</option>
-            <option value="subtract">-</option>
-            <option value="multiply">*</option>
-            <option value="divide">/</option>
-        </select>
-        <input type="number" name="num02"
-        placeholder="Number two" required>
-        <button>Calculate</button>
+    <fieldset name ="my stupid calculator">
+        <form action="<?php echo htmlspecialchars($_SERVER
+        ["PHP_SELF"]); ?>" method="post">
+            <input type="number" name="num01"
+            placeholder="Number one" required>
+            <select name="operator">
+                <option value="add">+</option>
+                <option value="subtract">-</option>
+                <option value="multiply">*</option>
+                <option value="divide">/</option>
+            </select>
+            <input type="number" name="num02"
+            placeholder="Number two" required>
+            <button>Calculate</button>
     </form>
+    </fieldset>
     <?php 
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // using filter_input is a security measure to prevent code injection
